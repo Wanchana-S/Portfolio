@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block title %}{{ data.name }} - ติดต่อ{% endblock %}
+
+{% block content %}
+<!-- Contact Hero Section -->
+<section class="py-5 bg-light mt-5 pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4 fw-bold mb-4">ติดต่อฉัน</h1>
+                <p class="lead">พร้อมที่จะเริ่มต้นโปรเจ็คใหม่หรือมีคำถาม? ติดต่อฉันได้เลย!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Content -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Contact Information -->
+            <div class="col-lg-4 mb-5">
+                <div class="contact-info">
+                    <h3 class="fw-bold mb-4">
+                        <i class="fas fa-info-circle text-primary me-2"></i>
+                        ข้อมูลติดต่อ
+                    </h3>
+                    
+                    <div class="contact-item mb-4">
+                        <div class="contact-icon mb-2">
+                            <i class="fas fa-envelope fa-2x text-primary"></i>
+                        </div>
+                        <h5 class="fw-bold">อีเมล</h5>
+                        <p class="text-muted">{{ data.contact.email }}</p>
+                        <a href="mailto:{{ data.contact.email }}" class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-paper-plane me-2"></i>ส่งอีเมล
+                        </a>
+                    </div>
+                    
+                    <div class="contact-item mb-4">
+                        <div class="contact-icon mb-2">
+                            <i class="fas fa-phone fa-2x text-success"></i>
+                        </div>
+                        <h5 class="fw-bold">โทรศัพท์</h5>
+                        <p class="text-muted">{{ data.contact.phone }}</p>
+                        <a href="tel:{{ data.contact.phone }}" class="btn btn-outline-success btn-sm">
+                            <i class="fas fa-phone me-2"></i>โทรหา
+                        </a>
+                    </div>
+                    
+                    <div class="contact-item mb-4">
+                        <div class="contact-icon mb-2">
+                            <i class="fas fa-map-marker-alt fa-2x text-info"></i>
+                        </div>
+                        <h5 class="fw-bold">ที่อยู่</h5>
+                        <p class="text-muted">{{ data.contact.address }}</p>
+                    </div>
+                    
+                    <div class="contact-item mb-4">
+                        <div class="contact-icon mb-2">
+                            <i class="fab fa-line fa-2x text-success"></i>
+                        </div>
+                        <h5 class="fw-bold">LINE</h5>
+                        <p class="text-muted">{{ data.contact.line }}</p>
+                        <a href="https://line.me/ti/p/{{ data.contact.line }}" class="btn btn-outline-success btn-sm" target="_blank">
+                            <i class="fab fa-line me-2"></i>เพิ่มเพื่อน
+                        </a>
+                    </div>
+                    
+                    <div class="social-links mt-4">
+                        <h5 class="fw-bold mb-3">ติดตามฉันได้ที่:</h5>
+                        <div class="d-flex gap-3">
+                            <a href="{{ data.contact.github }}" class="btn btn-dark" target="_blank" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://line.me/ti/p/{{ data.contact.line }}" class="btn btn-success" target="_blank" title="LINE">
+                                <i class="fab fa-line"></i>
+                            </a>
+                            <a href="{{ data.contact.linkedin }}" class="btn btn-primary" target="_blank" title="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="{{ data.contact.facebook }}" class="btn btn-primary" target="_blank" title="Facebook">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="col-lg-8">
+                <div class="contact-form">
+                    <h3 class="fw-bold mb-4">
+                        <i class="fas fa-paper-plane text-primary me-2"></i>
+                        ส่งข้อความถึงฉัน
+                    </h3>
+                    
+                    <form method="POST" action="{{ url_for('contact_submit') }}">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label fw-bold">ชื่อ *</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label fw-bold">อีเมล *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="subject" class="form-label fw-bold">หัวข้อ</label>
+                            <select class="form-select" id="subject" name="subject">
+                                <option value="">เลือกหัวข้อ</option>
+                                <option value="project">ขอเสนอโปรเจ็ค</option>
+                                <option value="collaboration">ขอความร่วมมือ</option>
+                                <option value="question">คำถามทั่วไป</option>
+                                <option value="feedback">ข้อเสนอแนะ</option>
+                                <option value="other">อื่นๆ</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="message" class="form-label fw-bold">ข้อความ *</label>
+                            <textarea class="form-control" id="message" name="message" rows="6" placeholder="เขียนข้อความของคุณที่นี่..." required></textarea>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter">
+                                <label class="form-check-label" for="newsletter">
+                                    สมัครรับข่าวสารและโปรเจ็คล่าสุด
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-paper-plane me-2"></i>ส่งข้อความ
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

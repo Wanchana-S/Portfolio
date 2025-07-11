@@ -1,0 +1,287 @@
+{% extends "base.html" %}
+
+{% block title %}{{ data.name }} - เกี่ยวกับฉัน{% endblock %}
+
+{% block content %}
+<!-- About Hero Section -->
+<section class="py-5 bg-light mt-5 pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4 fw-bold mb-4">เกี่ยวกับฉัน</h1>
+                <p class="lead">เรียนรู้เพิ่มเติมเกี่ยวกับประสบการณ์และความเชี่ยวชาญของฉัน</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Content -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="about-content">
+                    <h2 class="fw-bold mb-4">ใครคือ {{ data.name }}?</h2>
+                    <p class="lead mb-4">{{ data.about }}</p>
+                    
+                    <p class="mb-4">
+                        ฉันเป็นนักพัฒนาที่มีความเชี่ยวชาญในการพัฒนา ERP Systems และ Business Applications 
+                        ด้วยประสบการณ์ในการพัฒนาแอปพลิเคชันด้วย C#, VB.NET, Angular และ JavaScript 
+                        รวมถึงการทำงานกับฐานข้อมูล Microsoft SQL Server และ Oracle
+                    </p>
+                    
+                    <p class="mb-4">
+                        ฉันมีความเชี่ยวชาญในการพัฒนา Business Reports ด้วย SSRS และการเขียน Stored Procedures 
+                        รวมถึงการปรับแต่งประสิทธิภาพของฐานข้อมูล และการพัฒนา ERP Customization 
+                        สำหรับ Epicor Kinetic และ Infor SyteLine
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="about-sidebar">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold mb-3">
+                                <i class="fas fa-user me-2"></i>ข้อมูลส่วนตัว
+                            </h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">
+                                    <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                                    {{ data.contact.address }}
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-envelope text-primary me-2"></i>
+                                    {{ data.contact.email }}
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fas fa-phone text-primary me-2"></i>
+                                    {{ data.contact.phone }}
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fab fa-line text-primary me-2"></i>
+                                    {{ data.contact.line }}
+                                </li>
+                                <li class="mb-2">
+                                    <i class="fab fa-github text-primary me-2"></i>
+                                    <a href="{{ data.contact.github }}" target="_blank" class="text-decoration-none">{{ data.contact.github }}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="display-5 fw-bold">ทักษะและความเชี่ยวชาญ</h2>
+                <p class="lead">เทคโนโลยีและเครื่องมือที่ฉันใช้ในการพัฒนา</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="skill-category">
+                    <h4 class="fw-bold mb-3">
+                        <i class="fas fa-code text-primary me-2"></i>Programming & Web Development
+                    </h4>
+                    <div class="skills-grid">
+                        <span class="badge bg-primary me-2 mb-2">C#</span>
+                        <span class="badge bg-primary me-2 mb-2">VB.NET</span>
+                        <span class="badge bg-primary me-2 mb-2">JavaScript</span>
+                        <span class="badge bg-primary me-2 mb-2">TypeScript</span>
+                        <span class="badge bg-primary me-2 mb-2">HTML/CSS</span>
+                        <span class="badge bg-primary me-2 mb-2">Angular</span>
+                        <span class="badge bg-primary me-2 mb-2">Bootstrap</span>
+                        <span class="badge bg-primary me-2 mb-2">Python</span>
+                        <span class="badge bg-primary me-2 mb-2">React</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="skill-category">
+                    <h4 class="fw-bold mb-3">
+                        <i class="fas fa-database text-primary me-2"></i>Database & Reporting
+                    </h4>
+                    <div class="skills-grid">
+                        <span class="badge bg-success me-2 mb-2">Microsoft SQL Server</span>
+                        <span class="badge bg-success me-2 mb-2">Oracle</span>
+                        <span class="badge bg-success me-2 mb-2">SSRS</span>
+                        <span class="badge bg-success me-2 mb-2">SQL Queries</span>
+                        <span class="badge bg-success me-2 mb-2">Stored Procedures</span>
+                        <span class="badge bg-success me-2 mb-2">Performance Tuning</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="skill-category">
+                    <h4 class="fw-bold mb-3">
+                        <i class="fas fa-tools text-primary me-2"></i>Development Tools
+                    </h4>
+                    <div class="skills-grid">
+                        <span class="badge bg-info me-2 mb-2">Visual Studio</span>
+                        <span class="badge bg-info me-2 mb-2">Visual Studio Code</span>
+                        <span class="badge bg-info me-2 mb-2">Git</span>
+                        <span class="badge bg-info me-2 mb-2">Sourcetree</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="skill-category">
+                    <h4 class="fw-bold mb-3">
+                        <i class="fas fa-chart-line text-primary me-2"></i>ERP Development
+                    </h4>
+                    <div class="skills-grid">
+                        <span class="badge bg-warning me-2 mb-2">Epicor Kinetic</span>
+                        <span class="badge bg-warning me-2 mb-2">Infor SyteLine</span>
+                        <span class="badge bg-warning me-2 mb-2">ERP Customization</span>
+                        <span class="badge bg-warning me-2 mb-2">Business Reports</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="display-5 fw-bold">ประสบการณ์การทำงาน</h2>
+                <p class="lead">เส้นทางอาชีพและการพัฒนาของฉัน</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker bg-primary"></div>
+                        <div class="timeline-content">
+                            <h5 class="fw-bold">SQL Developer & SSRS</h5>
+                            <p class="text-muted">Fujitsu Systems Business (Thailand) Co., Ltd. • Sep 2023 - present</p>
+                            <ul>
+                                <li>Developed web applications using Angular and Java, supporting various internal service systems integrated with Oracle packages. Participated in the development phase to assist front-end and back-end teams in Implementation and integration.</li>
+                                <li>Prepared, transformed, and validated data for business reporting. Generated assigned reports using Oracle PL/SQL and SSRS (SQL Server Reporting Services), ensuring accuracy and timely delivery of reporting results.</li>
+                                <li>Designed and developed database reports using SSRS in conjunction with Oracle databases, ensuring they accurately met requirements and business insights.</li>
+                                <li>Optimized database performance through SQL query tuning, proper indexing, and system analysis to improve processing time and reduce resource usage, especially in high-volume data environments.</li>
+                                <li>Utilized tools such as Git, Sourcetree, Visual Studio, and Visual Studio Code for version control, development, and deployment across multiple projects. Main development language was PL/SQL, with additional contributions in Angular and Java when needed.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker bg-success"></div>
+                        <div class="timeline-content">
+                            <h5 class="fw-bold">ERP Developer (Epicor Kinetic)</h5>
+                            <p class="text-muted">MIB Co., Ltd. • Jan 2022 - Aug 2023</p>
+                            <ul>
+                                <li>Developed ERP software (Epicor) solutions tailored to client needs, including customization and module enhancements.</li>
+                                <li>Created business reports for clients using SSRS, MS SQL Server, and Stored Procedures, ensuring accuracy and usability.</li>
+                                <li>Designed and built interactive dashboards to support client decision-making and performance tracking.</li>
+                                <li>Provided project support and coordination under assigned supervision, ensuring timely and effective task execution.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker bg-info"></div>
+                        <div class="timeline-content">
+                            <h5 class="fw-bold">ERP Developer (Infor SyteLine)</h5>
+                            <p class="text-muted">ERP Partner Co., Ltd. • Oct 2019 - Dec 2021</p>
+                            <ul>
+                                <li>Developed and customized ERP software (Infor SyteLine) for clients across more than 5 companies, tailoring solutions to meet specific business requirements.</li>
+                                <li>Created business and operational reports using SSRS, MS SQL Server, and Stored Procedures, ensuring data accuracy and actionable insights.</li>
+                                <li>Conducted user training sessions for customized ERP modules to ensure effective system adoption and usage.</li>
+                                <li>Provided project support and collaborated with internal teams under designed supervision to ensure successful implementation and client satisfaction.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker bg-secondary"></div>
+                        <div class="timeline-content">
+                            <h5 class="fw-bold">Front-End Developer Intern</h5>
+                            <p class="text-muted">Gofive Co., Ltd. • May 2018 - Aug 2018</p>
+                            <ul>
+                                <li>Participated in developing both the company website and a blog website using C# and Angular 5.</li>
+                                <li>Assisted in building user interface components, page layouts, and basic interactions.</li>
+                                <li>Collaborated with the team to test and improve front-end functionality during the development phase.</li>
+                                <li>Supported content creation and presentation design for internal use.</li>
+                                <li>Gained multimedia experience by photographing company events and editing promotional and internal videos to support marketing and HR activities.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Education Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="display-5 fw-bold">การศึกษา</h2>
+                <p class="lead">พื้นฐานการศึกษาและใบรับรอง</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="education-card bg-white p-4 rounded shadow-sm">
+                    <h5 class="fw-bold">
+                        <i class="fas fa-graduation-cap text-primary me-2"></i>
+                        วิทยาการคอมพิวเตอร์
+                    </h5>
+                    <p class="text-muted">มหาวิทยาลัยสยาม</p>
+                    <p class="text-muted">คณะวิทยาศาสตร์</p>
+                    <p class="text-muted">2018 - 2022</p>
+                    <p class="text-muted"><strong>GPA:</strong> 3.12</p>
+                    <p>ศึกษาด้านการพัฒนาโปรแกรม ฐานข้อมูล และระบบสารสนเทศ</p>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="education-card bg-white p-4 rounded shadow-sm">
+                    <h5 class="fw-bold">
+                        <i class="fas fa-certificate text-primary me-2"></i>
+                        ใบรับรองต่างๆ
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <a href="https://www.udemy.com/certificate/UC-0128a89e-d937-4d0c-a217-b428c17d1887/" target="_blank" class="text-decoration-none">
+                                สร้างแอพพลิเคชั่นด้วยภาษา Python (Real-World Projects)
+                            </a>
+                            <br><small class="text-muted">Udemy / Jun 2025 - Jun 2025</small>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <a href="https://www.udemy.com/certificate/UCdbf9625e-9ea0-4d7f-b4da-68a82de026a9/" target="_blank" class="text-decoration-none">
+                                พัฒนาเว็บแอพพลิเคชั่นด้วย React (Real-World Project)
+                            </a>
+                            <br><small class="text-muted">Udemy / Jan 2023 - Jan 2023</small>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <strong>ทักษะที่ได้จากการเรียน:</strong>
+                            <br><small class="text-muted">การพัฒนาโปรแกรม, ฐานข้อมูล, ระบบสารสนเทศ, การวิเคราะห์และออกแบบระบบ</small>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <strong>ทักษะที่ได้จากการทำงาน:</strong>
+                            <br><small class="text-muted">ERP Development, Business Reports, Database Performance Tuning, SSRS Development</small>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-check text-success me-2"></i>
+                            <strong>ทักษะที่ได้จากการฝึกอบรม:</strong>
+                            <br><small class="text-muted">Python Development, React Development, Modern Web Technologies</small>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

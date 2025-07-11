@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+
+{% block title %}{{ data.name }} - โปรเจ็ค{% endblock %}
+
+{% block content %}
+<!-- Projects Hero Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4 fw-bold mb-4">โปรเจ็คของฉัน</h1>
+                <p class="lead">ดูผลงานและโปรเจ็คที่ฉันได้พัฒนา</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Grid -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            {% for project in data.projects %}
+            <div class="col-lg-6 col-xl-4 mb-5">
+                <div class="project-card h-100 bg-white rounded shadow-sm overflow-hidden">
+                    <div class="project-image bg-light p-4 text-center">
+                        <i class="fas fa-project-diagram fa-5x text-muted"></i>
+                    </div>
+                    <div class="project-content p-4">
+                        <h4 class="fw-bold mb-3">{{ project.title }}</h4>
+                        <p class="text-muted mb-4">{{ project.description }}</p>
+                        
+                        <div class="project-technologies mb-4">
+                            <h6 class="fw-bold mb-2">เทคโนโลยีที่ใช้:</h6>
+                            <div class="d-flex flex-wrap">
+                                {% for tech in project.technologies %}
+                                <span class="badge bg-primary me-1 mb-1">{{ tech }}</span>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        
+                        <div class="project-features mb-4">
+                            <h6 class="fw-bold mb-2">คุณสมบัติหลัก:</h6>
+                            <ul class="list-unstyled">
+                                <li class="mb-1">
+                                    <i class="fas fa-check text-success me-2"></i>
+                                    Responsive Design
+                                </li>
+                                <li class="mb-1">
+                                    <i class="fas fa-check text-success me-2"></i>
+                                    Modern UI/UX
+                                </li>
+                                <li class="mb-1">
+                                    <i class="fas fa-check text-success me-2"></i>
+                                    Performance Optimized
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-actions">
+                            <button class="btn btn-primary me-2" onclick="showProjectDetails('{{ project.title }}')">
+                                <i class="fas fa-eye me-2"></i>ดูรายละเอียด
+                            </button>
+                            <button class="btn btn-outline-secondary">
+                                <i class="fab fa-github me-2"></i>Source Code
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Project Categories -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="display-5 fw-bold">หมวดหมู่โปรเจ็ค</h2>
+                <p class="lead">โปรเจ็คแบ่งตามประเภทและเทคโนโลยี</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="category-card text-center p-4 bg-white rounded shadow-sm">
+                    <div class="category-icon mb-3">
+                        <i class="fas fa-globe fa-3x text-primary"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">เว็บไซต์</h4>
+                    <p class="text-muted">เว็บไซต์ที่พัฒนาโดยใช้ Flask, Django และ Bootstrap</p>
+                    <span class="badge bg-primary">3 โปรเจ็ค</span>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="category-card text-center p-4 bg-white rounded shadow-sm">
+                    <div class="category-icon mb-3">
+                        <i class="fas fa-mobile-alt fa-3x text-success"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">แอปพลิเคชัน</h4>
+                    <p class="text-muted">แอปพลิเคชันที่พัฒนาโดยใช้ Python, Flask และ JavaScript</p>
+                    <span class="badge bg-success">2 โปรเจ็ค</span>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="category-card text-center p-4 bg-white rounded shadow-sm">
+                    <div class="category-icon mb-3">
+                        <i class="fas fa-server fa-3x text-info"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3">ระบบจัดการ</h4>
+                    <p class="text-muted">ระบบจัดการที่พัฒนาโดยใช้ Django และ PostgreSQL</p>
+                    <span class="badge bg-info">1 โปรเจ็ค</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Project Statistics -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="display-5 fw-bold">สถิติโปรเจ็ค</h2>
+                <p class="lead">ภาพรวมของผลงานที่พัฒนา</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="stat-card text-center p-4 bg-primary text-white rounded">
+                    <div class="stat-icon mb-3">
+                        <i class="fas fa-code fa-3x"></i>
+                    </div>
+                    <h3 class="fw-bold">6</h3>
+                    <p class="mb-0">โปรเจ็คทั้งหมด</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="stat-card text-center p-4 bg-success text-white rounded">
+                    <div class="stat-icon mb-3">
+                        <i class="fas fa-users fa-3x"></i>
+                    </div>
+                    <h3 class="fw-bold">5</h3>
+                    <p class="mb-0">ลูกค้าที่พึงพอใจ</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="stat-card text-center p-4 bg-info text-white rounded">
+                    <div class="stat-icon mb-3">
+                        <i class="fas fa-clock fa-3x"></i>
+                    </div>
+                    <h3 class="fw-bold">2+</h3>
+                    <p class="mb-0">ปีประสบการณ์</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="stat-card text-center p-4 bg-warning text-white rounded">
+                    <div class="stat-icon mb-3">
+                        <i class="fas fa-star fa-3x"></i>
+                    </div>
+                    <h3 class="fw-bold">4.9</h3>
+                    <p class="mb-0">คะแนนเฉลี่ย</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 bg-primary text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="display-5 fw-bold mb-4">สนใจโปรเจ็คของฉัน?</h2>
+                <p class="lead mb-4">ติดต่อฉันเพื่อหารือเกี่ยวกับโปรเจ็คของคุณ</p>
+                <a href="{{ url_for('contact') }}" class="btn btn-light btn-lg">
+                    <i class="fas fa-paper-plane me-2"></i>เริ่มต้นโปรเจ็ค
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Project Details Modal -->
+<div class="modal fade" id="projectModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="projectModalTitle">รายละเอียดโปรเจ็ค</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="projectModalBody">
+                <!-- Project details will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ปิด</button>
+                <button type="button" class="btn btn-primary">ดู Live Demo</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function showProjectDetails(projectTitle) {
+    // ตัวอย่างการแสดงรายละเอียดโปรเจ็ค
+    const modal = new bootstrap.Modal(document.getElementById('projectModal'));
+    document.getElementById('projectModalTitle').textContent = projectTitle;
+    document.getElementById('projectModalBody').innerHTML = `
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://via.placeholder.com/400x300" class="img-fluid rounded" alt="Project Screenshot">
+            </div>
+            <div class="col-md-6">
+                <h6 class="fw-bold">รายละเอียดโปรเจ็ค:</h6>
+                <p>นี่คือรายละเอียดของโปรเจ็ค ${projectTitle} ที่พัฒนาโดยใช้เทคโนโลยีที่ทันสมัย</p>
+                <h6 class="fw-bold mt-3">คุณสมบัติ:</h6>
+                <ul>
+                    <li>Responsive Design</li>
+                    <li>Modern UI/UX</li>
+                    <li>Performance Optimized</li>
+                    <li>Cross-browser Compatible</li>
+                </ul>
+            </div>
+        </div>
+    `;
+    modal.show();
+}
+</script>
+{% endblock %} 
