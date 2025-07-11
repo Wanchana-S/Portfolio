@@ -232,8 +232,8 @@ pip install gunicorn
 ## 📞 ติดต่อ
 
 หากมีคำถามหรือข้อเสนอแนะ สามารถติดต่อได้ที่:
-- Email: wanch@example.com
-- GitHub: [github.com/wanch](https://github.com/wanch)
+- Email: wanchana.job@hotmail.com
+- GitHub: [github.com/Wanchana-S](https://github.com/Wanchana-S)
 
 ---
 
