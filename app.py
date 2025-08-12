@@ -17,7 +17,7 @@ portfolio_data = {
     # ลบ 'projects' ออก
     'contact': {
         'email': 'wanchana.job@hotmail.com',
-        'phone': '092-278-0448',
+        'phone': '098-265-9952,092-278-0448',
         'line': 'raffyoreo',
         'address': '225/198 Soi 7 Sinthavee Greenville 2 Pracha Utid 90 Road Samut Prakan',
         'github': 'https://github.com/Wanchana-S',
